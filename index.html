@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To - Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: blue;
+            padding: 5px;
+        }
+
+        .todo {
+            width: 35%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px 25px 30px;
+            text-align: center;
+            margin: 110px auto;
+        }
+
+        .todo h2 {
+            color: cadetblue;
+            display: flex;
+            padding-top: 10px;
+        }
+
+        .todo h2 img {
+            width: 40px;
+            height: 45px;
+        }
+
+        .add {
+            display: flex;
+        }
+
+        input {
+            background-color: wheat;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 2px 10px;
+            margin: 0px 10px;
+            border-radius: 15px;
+        }
+
+        ul li {
+            text-align: left;
+            list-style: none;
+            padding: 12px 8px 12px 40px;
+            font-size: 17px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-image: url(unchecked.png);
+            background-position: center;
+            background-size: cover;
+            top: 10px;
+            left: 0px;
+            
+        } 
+        ul li.box{
+           color: orangered;
+           text-decoration: line-through;
+        }
+        ul li.box::before{
+            background-image: url(checked.png);
+        }
+        ul li span{
+            position:absolute;
+            right: 0px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            color: gray;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        ul li span:hover{
+            background-color:aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo">
+            <h2>TO - DO LIST <img src="icon.png"></h2>
+            <div class="add">
+                <input type="text" id="input-box" placeholder="Add your task">
+                <button onclick="addtask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="box">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
